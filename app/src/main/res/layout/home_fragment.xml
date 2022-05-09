@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:id="@+id/ln_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/template_header_image"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="51dp"
+            android:paddingBottom="51dp">
+
+            <ImageView
+                android:layout_width="80.56dp"
+                android:layout_height="78dp"
+                android:src="@drawable/image" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_text_article"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ln_header"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/rubik_reguler"
+            android:lineHeight="22px"
+            android:text="@string/news_article"
+            android:textColor="@color/black_neutral"
+            android:textSize="18dp" />
+
+        <View
+            android:id="@+id/view_1"
+            android:layout_width="match_parent"
+            android:layout_height="2sp"
+            android:layout_below="@+id/tv_text_article"
+            android:layout_marginTop="14dp"
+            android:layout_marginBottom="11dp"
+            android:background="@drawable/layout_linespacing" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_news"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/view_1" />
+    </RelativeLayout>
+
+</ScrollView>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="90dp"
+    android:padding="5sp">
+
+    <FrameLayout
+        android:id="@+id/fl_image"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:background="@drawable/template_header_image">
+
+        <ImageView
+            android:layout_width="39dp"
+            android:layout_height="39dp"
+            android:layout_gravity="center"
+            android:src="@drawable/image" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_toRightOf="@id/fl_image"
+        android:ellipsize="end"
+        android:fontFamily="@font/rubik_semibold"
+        android:lineHeight="20dp"
+        android:maxLines="2"
+        android:text="@string/lorem_ipsum"
+        android:textColor="@color/blue_primary"
+        android:textSize="14dp" />
+
+    <TextView
+        android:id="@+id/tv_lable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tv_time"
+        android:layout_marginLeft="12dp"
+        android:layout_marginBottom="2dp"
+        android:layout_toRightOf="@id/fl_image"
+        android:ellipsize="end"
+        android:fontFamily="@font/rubik_semibold"
+        android:lineHeight="20dp"
+        android:maxLines="1"
+        android:text="Programming"
+        android:textColor="@color/grey_primary"
+        android:textSize="11dp" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="12dp"
+        android:layout_marginBottom="2dp"
+        android:layout_toRightOf="@id/fl_image"
+        android:ellipsize="end"
+        android:fontFamily="@font/nunito_reguler"
+        android:lineHeight="20dp"
+        android:maxLines="1"
+        android:text="1 jam yang lalu"
+        android:textColor="@color/grey_primary"
+        android:textSize="10dp" />
+</RelativeLayout>
