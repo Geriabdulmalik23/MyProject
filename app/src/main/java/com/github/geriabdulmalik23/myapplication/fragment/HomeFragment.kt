@@ -5,10 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.github.geriabdulmalik23.myapplication.databinding.HomeFragmentBinding
 import com.github.geriabdulmalik23.myapplication.viewmodel.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import androidx.activity.viewModels;
+import androidx.fragment.app.viewModels
 
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
@@ -17,7 +20,8 @@ class HomeFragment : Fragment() {
         fun newInstance() = HomeFragment()
     }
 
-    private lateinit var viewModel: HomeViewModel
+    val viewModel: HomeViewModel by viewModels()
+
     private lateinit var mBinding: HomeFragmentBinding
     val binding: HomeFragmentBinding
         get() = mBinding
@@ -28,12 +32,12 @@ class HomeFragment : Fragment() {
     ): View? {
         mBinding = HomeFragmentBinding.inflate(inflater, container, false)
         val view = binding.root
-        return view
-    }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
+        viewModel.getArticle()
+        viewModel.article.observe(viewLifecycleOwner) {
+            binding.tvTextArticle.text = it
+        }
+        return view
     }
 
 }

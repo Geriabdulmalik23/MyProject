@@ -1,5 +1,6 @@
 package com.github.geriabdulmalik23.myapplication.di
 
+import com.github.geriabdulmalik23.myapplication.repository.HomeScreenRepository
 import com.github.geriabdulmalik23.myapplication.repository.SplashScreenRepository
 import com.github.geriabdulmalik23.myapplication.viewmodel.HomeViewModel
 import com.github.geriabdulmalik23.myapplication.viewmodel.SplashScreenViewModel
@@ -14,8 +15,8 @@ object AppModule {
     @Provides
     fun splashScreenRepository() = SplashScreenRepository()
 
-    fun splashScreenViewModel() = SplashScreenViewModel(splashScreenRepository())
+    @Provides
+    fun homeScreenRepository() = HomeScreenRepository()
 
-    fun homeViewModel() = HomeViewModel()
 
 }
