@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -30,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/ln_header"
             android:layout_marginTop="10dp"
-            android:fontFamily="@font/rubik_reguler"
+            android:fontFamily="@font/montserrat_regular"
             android:lineHeight="22px"
             android:text="@string/news_article"
             android:textColor="@color/black_neutral"
@@ -50,6 +51,72 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/view_1" />
+
+        <TextView
+            android:id="@+id/newItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rv_news"
+            android:fontFamily="@font/montserrat_medium"
+            android:lineHeight="28dp"
+            android:text="@string/new_event"
+            android:textColor="@color/black_neutral"
+            android:textSize="22dp" />
+
+        <View
+            android:id="@+id/view_2"
+            android:layout_width="match_parent"
+            android:layout_height="2sp"
+            android:layout_below="@+id/newItem"
+            android:layout_marginTop="14dp"
+            android:layout_marginBottom="11dp"
+            android:background="@drawable/layout_linespacing" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_events"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/view_2" />
+
+        <TextView
+            android:id="@+id/tv_podcast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rv_events"
+            android:fontFamily="@font/montserrat_medium"
+            android:lineHeight="28dp"
+            android:text="@string/text_podcast"
+            android:textColor="@color/black_neutral"
+            android:textSize="22dp" />
+
+        <View
+            android:id="@+id/view_3"
+            android:layout_width="match_parent"
+            android:layout_height="2sp"
+            android:layout_below="@+id/tv_podcast"
+            android:layout_marginTop="14dp"
+            android:layout_marginBottom="11dp"
+            android:background="@drawable/layout_linespacing" />
+
+
+        <LinearLayout
+            android:id="@+id/ll_podcast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/view_3"
+            android:background="@drawable/template_header_image"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="51dp"
+            android:paddingBottom="51dp">
+
+            <ImageView
+                android:layout_width="80.56dp"
+                android:layout_height="78dp"
+                android:src="@drawable/image" />
+        </LinearLayout>
+
+
     </RelativeLayout>
 
 </ScrollView>

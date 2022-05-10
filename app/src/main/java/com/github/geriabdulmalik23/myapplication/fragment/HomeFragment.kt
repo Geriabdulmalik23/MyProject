@@ -1,43 +1,55 @@
 package com.github.geriabdulmalik23.myapplication.fragment
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
+import android.util.Log
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import com.github.geriabdulmalik23.myapplication.databinding.HomeFragmentBinding
 import com.github.geriabdulmalik23.myapplication.viewmodel.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import androidx.activity.viewModels;
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.github.geriabdulmalik23.myapplication.adapter.EventsAdapter
+import com.github.geriabdulmalik23.myapplication.adapter.NewsArticleAdapter
+import com.github.geriabdulmalik23.myapplication.common.AppObserver
+import com.github.geriabdulmalik23.myapplication.common.BaseFragment
 
 @AndroidEntryPoint
-class HomeFragment : Fragment() {
+class HomeFragment : BaseFragment<HomeFragmentBinding, AppObserver>() {
 
     companion object {
         fun newInstance() = HomeFragment()
     }
 
     val viewModel: HomeViewModel by viewModels()
+    private lateinit var adapterNewArticle: NewsArticleAdapter
+    private lateinit var adapterNewEvent: EventsAdapter
 
-    private lateinit var mBinding: HomeFragmentBinding
-    val binding: HomeFragmentBinding
-        get() = mBinding
+    override fun onBinding(container: ViewGroup?): HomeFragmentBinding {
+        return HomeFragmentBinding.inflate(layoutInflater)
+    }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        mBinding = HomeFragmentBinding.inflate(inflater, container, false)
-        val view = binding.root
-
-        viewModel.getArticle()
-        viewModel.article.observe(viewLifecycleOwner) {
-            binding.tvTextArticle.text = it
+    override fun onCreated(savedInstanceState: Bundle?) {
+        adapterNewArticle = NewsArticleAdapter {
+            Log.d("tests", it?.name.toString())
         }
-        return view
+
+        adapterNewEvent = EventsAdapter {
+
+        }
+        binding.rvNews.layoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+
+        binding.rvEvents.layoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+
+        viewModel.list.observe(viewLifecycleOwner) {
+            adapterNewArticle.submitList(it.toList())
+            adapterNewEvent.submitList(it.toList())
+        }
+        binding.rvNews.adapter = adapterNewArticle
+        binding.rvEvents.adapter = adapterNewEvent
+
     }
 
 }
