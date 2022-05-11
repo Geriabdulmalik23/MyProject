@@ -4,9 +4,11 @@ import androidx.recyclerview.widget.DiffUtil
 
 data class ArticleEntity(
     val id: Int? = null,
-    val name: String? = null,
-    val imageNew: String? = null,
-    val label: String? = null
+    val type: String? = null,
+    val slug: String? = null,
+    val url: String? = null,
+    val excerpt: String? = null,
+    val category: String? = null
 ) {
     companion object {
         val DIFF_UTIL = object : DiffUtil.ItemCallback<ArticleEntity>() {

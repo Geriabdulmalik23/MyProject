@@ -31,7 +31,7 @@ class HomeFragment : BaseFragment<HomeFragmentBinding, AppObserver>() {
 
     override fun onCreated(savedInstanceState: Bundle?) {
         adapterNewArticle = NewsArticleAdapter {
-            Log.d("tests", it?.name.toString())
+
         }
 
         adapterNewEvent = EventsAdapter {
@@ -46,6 +46,9 @@ class HomeFragment : BaseFragment<HomeFragmentBinding, AppObserver>() {
         viewModel.list.observe(viewLifecycleOwner) {
             adapterNewArticle.submitList(it.toList())
             adapterNewEvent.submitList(it.toList())
+        }
+        viewModel.list.observe(viewLifecycleOwner) {
+            Log.d("testlogna", it.toString())
         }
         binding.rvNews.adapter = adapterNewArticle
         binding.rvEvents.adapter = adapterNewEvent
