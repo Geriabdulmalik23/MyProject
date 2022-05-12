@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
 
-abstract class BaseFragment<VB : ViewBinding, T> : Fragment() {
+abstract class BaseFragment<VB : ViewBinding> : Fragment() {
 
     private lateinit var mViewBinding: VB
 

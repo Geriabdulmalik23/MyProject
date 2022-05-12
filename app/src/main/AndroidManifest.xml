@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.github.geriabdulmalik23.myapplication">
 
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".di.App"
@@ -12,8 +12,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-
-
+        <activity
+            android:name=".activity.WebviewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.Webview"
+            android:exported="false" />
         <activity
             android:name=".activity.MainActivity"
             android:exported="false" />

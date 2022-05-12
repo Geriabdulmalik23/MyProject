@@ -3,16 +3,13 @@ package com.github.geriabdulmalik23.myapplication.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.RecyclerView
 import com.github.geriabdulmalik23.myapplication.common.AppAdapter
 import com.github.geriabdulmalik23.myapplication.common.AppViewHolder
 import com.github.geriabdulmalik23.myapplication.databinding.ListArticleBinding
 import com.github.geriabdulmalik23.myapplication.entity.ArticleEntity
-import com.github.geriabdulmalik23.myapplication.entity.ResponseEntity
 
-class NewsArticleAdapter(private val listener: (ResponseEntity?) -> Unit) :
-    AppAdapter<ListArticleBinding, ResponseEntity, NewsArticleAdapter.ViewHolder>(ResponseEntity.DIFF_UTIL) {
+class NewsArticleAdapter(private val listener: (ArticleEntity?) -> Unit) :
+    AppAdapter<ListArticleBinding, ArticleEntity, NewsArticleAdapter.ViewHolder>(ArticleEntity.DIFF_UTIL) {
 
     override fun onBinding(parent: ViewGroup): ListArticleBinding {
         return ListArticleBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -20,12 +17,11 @@ class NewsArticleAdapter(private val listener: (ResponseEntity?) -> Unit) :
 
     override fun onViewHolder(view: View) = ViewHolder(view)
 
-    inner class ViewHolder(view: View) : AppViewHolder<ResponseEntity>(view) {
+    inner class ViewHolder(view: View) : AppViewHolder<ArticleEntity>(view) {
 
-        override fun bindItem(item: ResponseEntity?, position: Int) {
+        override fun bindItem(item: ArticleEntity?, position: Int) {
             binding.apply {
-//                tvTitle.text = item?.n
-//                tvLable.text = item?.label
+                tvTitle.text = item?.title
                 rlPrimary.setOnClickListener { listener(item) }
 
             }

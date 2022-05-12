@@ -4,7 +4,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
 
-abstract class BaseActivity<VB : ViewBinding, T> : AppCompatActivity() {
+abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
+
     private lateinit var mViewBinding: VB
     protected val viewBinding: VB
         get() = mViewBinding
@@ -28,4 +29,5 @@ abstract class BaseActivity<VB : ViewBinding, T> : AppCompatActivity() {
         if (this is AppObserver) onViewModelObserver()
 
     }
+
 }

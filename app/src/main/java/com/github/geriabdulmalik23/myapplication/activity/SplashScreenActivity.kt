@@ -13,13 +13,17 @@ import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class SplashScreenActivity : BaseActivity<ActivitySplashScreenBinding, AppObserver>() {
+class SplashScreenActivity : BaseActivity<ActivitySplashScreenBinding>(), AppObserver {
 
     private val mViewModel by viewModels<SplashScreenViewModel>()
     private lateinit var mBinding: ActivitySplashScreenBinding
 
     val binding: ActivitySplashScreenBinding
         get() = mBinding
+
+    override fun onViewModelObserver() {
+
+    }
 
     override fun onViewBinding(): ActivitySplashScreenBinding {
         return ActivitySplashScreenBinding.inflate(layoutInflater)

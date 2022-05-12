@@ -17,4 +17,41 @@ class RecentPostRepository @Inject constructor(private val mRecentPostService: R
             AppResult.OnFailure()
     }
 
+    fun getEvent() = arrayListOf<ResponseEntity>().apply {
+        add(
+            ResponseEntity(
+                status = "OK",
+                count = 3,
+                count_total = 3,
+                pages = 33,
+            )
+        )
+        add(
+            ResponseEntity(
+                status = "OK",
+                count = 3,
+                count_total = 3,
+                pages = 33,
+            )
+        )
+        add(
+            ResponseEntity(
+                status = "OK",
+                count = 3,
+                count_total = 3,
+                pages = 33,
+            )
+        )
+        add(
+            ResponseEntity(
+                status = "OK",
+                count = 3,
+                count_total = 3,
+                pages = 33,
+            )
+        )
+
+    }
+
+
 }

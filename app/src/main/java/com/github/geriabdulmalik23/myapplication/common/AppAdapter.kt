@@ -5,7 +5,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.viewbinding.ViewBinding
-
 abstract class AppAdapter<VB : ViewBinding, E : Any, VH : AppViewHolder<E>>(diffUtil: DiffUtil.ItemCallback<E>) :
     ListAdapter<E, VH>(diffUtil) {
 
