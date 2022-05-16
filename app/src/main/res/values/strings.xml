@@ -5,4 +5,6 @@
     <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sodales nunc ac gravida ultrices. Curabitur laoreet feugiat odio, tempus congue ligula malesuada et. Duis dignissim at ipsum vel tempus. Pellentesque sed vehicula lectus. Aenean accumsan pellentesque eros, nec feugiat diam. Cras rhoncus, lectus a scelerisque sagittis, nisi elit condimentum ipsum, a elementum mi magna eu felis. Nam lorem sapien, ornare nec quam in, porta faucibus lectus. Nullam in risus tincidunt dui semper rhoncus ac ac purus. Nullam ullamcorper rutrum molestie.</string>
     <string name="new_event">Event Terbaru</string>
     <string name="text_podcast">Podcast</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

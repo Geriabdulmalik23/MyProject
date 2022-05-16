@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        tools:layout="@layout/home_fragment"
+        android:id="@+id/homeFragment"
+        android:name="com.github.geriabdulmalik23.myapplication.fragment.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_blogFragment"
+            app:destination="@id/blogFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/blogFragment"
+        android:name="com.github.geriabdulmalik23.myapplication.fragment.BlogFragment"
+        tools:layout="@layout/blog_fragment"
+        android:label="BlogFragment" >
+        <action
+            android:id="@+id/action_blogFragment_to_eventFragment"
+            app:destination="@id/eventFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventFragment"
+        android:name="com.github.geriabdulmalik23.myapplication.fragment.EventFragment"
+        android:label="event_fragment"
+        tools:layout="@layout/event_fragment" >
+        <action
+            android:id="@+id/action_eventFragment_to_barayaFragment"
+            app:destination="@id/barayaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/barayaFragment"
+        android:name="com.github.geriabdulmalik23.myapplication.fragment.BarayaFragment"
+        android:label="baraya_fragment"
+        tools:layout="@layout/baraya_fragment" />
+</navigation>

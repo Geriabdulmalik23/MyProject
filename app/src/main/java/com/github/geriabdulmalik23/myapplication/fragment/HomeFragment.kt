@@ -2,9 +2,6 @@ package com.github.geriabdulmalik23.myapplication.fragment
 
 import android.os.Bundle
 import android.view.ViewGroup
-import com.github.geriabdulmalik23.myapplication.databinding.HomeFragmentBinding
-import com.github.geriabdulmalik23.myapplication.viewmodel.HomeViewModel
-import dagger.hilt.android.AndroidEntryPoint
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.github.geriabdulmalik23.myapplication.activity.WebviewActivity
@@ -12,7 +9,10 @@ import com.github.geriabdulmalik23.myapplication.adapter.EventsAdapter
 import com.github.geriabdulmalik23.myapplication.adapter.NewsArticleAdapter
 import com.github.geriabdulmalik23.myapplication.common.AppObserver
 import com.github.geriabdulmalik23.myapplication.common.BaseFragment
+import com.github.geriabdulmalik23.myapplication.databinding.HomeFragmentBinding
 import com.github.geriabdulmalik23.myapplication.extencion.startActivity
+import com.github.geriabdulmalik23.myapplication.viewmodel.HomeViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class HomeFragment : BaseFragment<HomeFragmentBinding>(), AppObserver {

@@ -4,25 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     tools:context=".activity.MainActivity">
+
 
     <include
         android:id="@+id/mInclude"
         layout="@layout/template_toolbar" />
 
-    <FrameLayout
-        android:id="@+id/frameLayout"
+    <androidx.fragment.app.FragmentContainerView
+        android:layout_below="@+id/mInclude"
+        android:id="@+id/fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/mBottomNav"
-        android:layout_below="@+id/mInclude" />
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/main_graph" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/mBottomNav"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        app:labelVisibilityMode="labeled"
-        app:menu="@menu/list_menu" />
 
 </RelativeLayout>

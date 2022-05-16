@@ -1,33 +1,23 @@
 package com.github.geriabdulmalik23.myapplication.fragment
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import com.github.geriabdulmalik23.myapplication.R
-import com.github.geriabdulmalik23.myapplication.viewmodel.BarayaViewModel
+import com.github.geriabdulmalik23.myapplication.common.AppObserver
+import com.github.geriabdulmalik23.myapplication.common.BaseFragment
+import com.github.geriabdulmalik23.myapplication.databinding.BarayaFragmentBinding
 
-class BarayaFragment : Fragment() {
+class BarayaFragment : BaseFragment<BarayaFragmentBinding>(), AppObserver {
+    override fun onViewModelObserver() {
 
-    companion object {
-        fun newInstance() = BarayaFragment()
     }
 
-    private lateinit var viewModel: BarayaViewModel
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.baraya_fragment, container, false)
+    override fun onBinding(container: ViewGroup?): BarayaFragmentBinding {
+        return BarayaFragmentBinding.inflate(layoutInflater)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(BarayaViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onCreated(savedInstanceState: Bundle?) {
+
     }
+
 
 }
